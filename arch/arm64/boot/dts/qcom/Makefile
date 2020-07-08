@@ -637,6 +637,12 @@ dtb-$(CONFIG_ARCH_SDM429) += sdm429-mtp.dtb \
 
 endif
 
+ifeq ($(CONFIG_MACH_XIAOMI_SANTONI_TREBLE),y)
+dtb-$(CONFIG_MACH_XIAOMI_SANTONI_TREBLE) := santoni/xiaomi-santoni-treble.dtb
+else
+dtb-$(CONFIG_MACH_XIAOMI_SANTONI) := santoni/xiaomi-santoni.dtb
+endif
+
 always		:= $(dtb-y)
 subdir-y	:= $(dts-dirs)
 clean-files	:= *.dtb
